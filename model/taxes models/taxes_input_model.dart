@@ -1,0 +1,52 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+class TaxesInputModel {
+  int? taxesId;
+  String? taxesName;
+  String? taxesDescription;
+  String? taxesRate;
+  String? taxesType;
+  int? taxesIsActive;
+  String? taxesCreatedAt;
+  String? taxesUpdatedAt;
+  int? taxesBusinessId; // Added property
+  TaxesInputModel({
+    this.taxesId,
+    this.taxesName,
+    this.taxesDescription,
+    this.taxesRate,
+    this.taxesType,
+    this.taxesIsActive,
+    this.taxesCreatedAt,
+    this.taxesUpdatedAt,
+    this.taxesBusinessId,
+  });
+
+  factory TaxesInputModel.fromJson(Map<String, dynamic> json) =>
+      TaxesInputModel(
+        taxesId: json['taxes_id'] as int?,
+        taxesName: json['taxes_name'] as String?,
+        taxesDescription: json['taxes_description'] as String?,
+        taxesRate: json['taxes_rate'] as String?,
+        taxesType: json['taxes_type'] as String?,
+        taxesIsActive: json['taxes_is_active'] as int?,
+        taxesCreatedAt: json['taxes_created_at'] as String?,
+        taxesUpdatedAt: json['taxes_updated_at'] as String?,
+        taxesBusinessId: json['taxes_business_id'] as int?, // Added property
+      );
+
+  Map<String, dynamic> toMap() {
+    Map<String, dynamic> map = {
+      'taxes_id': taxesId,
+      'taxes_name': taxesName,
+      'taxes_description': taxesDescription,
+      'taxes_rate': taxesRate,
+      'taxes_type': taxesType,
+      'taxes_is_active': taxesIsActive,
+      'taxes_created_at': taxesCreatedAt,
+      'taxes_updated_at': taxesUpdatedAt,
+      'taxes_business_id': taxesBusinessId, // Added property
+    };
+    map.removeWhere((key, value) => value == null);
+    return map;
+  }
+}
